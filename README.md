@@ -6,8 +6,6 @@ Casshan is an automated tool for finding and logging accounts which are suspecte
 
 [A **personal API key** from riot](https://developer.riotgames.com/docs/portal#web-apis_api-keys). It is **very important** that you do not use a development key for running reports if your intention is to do something with the output, like report it to Riot. Using a development key will return account IDs which look real, but do not correspond to a real account.
 
-Casshan is in need of some configuration improvements. You'll need to modify the project to use your API key and select your region.
+Casshan is in need of some configuration improvements. You'll need to modify the project to use your API key [here](https://github.com/JamieDavidson/Casshan/blob/master/Source/App.config#L14) and select your region [here](https://github.com/JamieDavidson/Casshan/blob/master/Source/Program.cs#L230).
 
-**An account to start off as your patient zero**. Enter a game of coop vs AI (intro bots) and find an account that looks suspicious. Set that account as `patientZero` in `Program.cs`.
-
-More to come on this soon.
+**An account to start off as your patient zero**. Enter a game of coop vs AI (intro bots) and find an account that looks suspicious. Set that account as `patientZero` [here](https://github.com/JamieDavidson/Casshan/blob/master/Source/Program.cs#L48).
