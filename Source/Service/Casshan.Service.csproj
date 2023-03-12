@@ -7,4 +7,22 @@
     <ProjectReference Include="..\Logging\Casshan.Logging.csproj" />
     <ProjectReference Include="..\RiotApi\Casshan.RiotApi.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\item.json" />
+    <Content Include="Data\item.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Data\names.json" />
+    <Content Include="Data\names.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Data\runesReforged.json" />
+    <Content Include="Data\runesReforged.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Data\summoner.json" />
+    <Content Include="Data\summoner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
