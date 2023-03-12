@@ -47,8 +47,8 @@ namespace Casshan.Repositories
             catch (NonSuccessResponseException e)
             when (e.StatusCode == HttpStatusCode.NotFound)
             {
-                m_Log.Log($"Querying total game count returned 404 for account {accountId}", LogLevel.error);
-                m_Log.Log(e.Message, LogLevel.error);
+                m_Log.Log($"Querying total game count returned 404 for account {accountId}", LogLevel.Error);
+                m_Log.Log(e.Message, LogLevel.Error);
 
                 return 0;
             }
@@ -66,8 +66,8 @@ namespace Casshan.Repositories
             catch (NonSuccessResponseException e)
                 when (e.StatusCode == HttpStatusCode.NotFound)
             {
-                m_Log.Log($"Querying ARAM game count returned 404 for account {accountId}", LogLevel.error);
-                m_Log.Log($"{e.Message}", LogLevel.error);
+                m_Log.Log($"Querying ARAM game count returned 404 for account {accountId}", LogLevel.Error);
+                m_Log.Log($"{e.Message}", LogLevel.Error);
                 return 0;
             }
         }
@@ -84,8 +84,8 @@ namespace Casshan.Repositories
             catch (NonSuccessResponseException e)
             when (e.StatusCode == HttpStatusCode.NotFound)
             {
-                m_Log.Log($"Querying bot game count returned 404 for account {accountId}", LogLevel.error);
-                m_Log.Log($"{e.Message}", LogLevel.error);
+                m_Log.Log($"Querying bot game count returned 404 for account {accountId}", LogLevel.Error);
+                m_Log.Log($"{e.Message}", LogLevel.Error);
                 return 0;
             }
         }
@@ -102,8 +102,8 @@ namespace Casshan.Repositories
             catch (NonSuccessResponseException e)
             when (e.StatusCode == HttpStatusCode.NotFound)
             {
-                m_Log.Log($"Querying for match IDs returned 404 for account {accountId}", LogLevel.error);
-                m_Log.Log($"{e.Message}", LogLevel.error);
+                m_Log.Log($"Querying for match IDs returned 404 for account {accountId}", LogLevel.Error);
+                m_Log.Log($"{e.Message}", LogLevel.Error);
                 return new string[] {};
             }
         }

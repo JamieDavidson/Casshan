@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Casshan.Logging
+﻿namespace Casshan.Logging
 {
     internal sealed class TimestampLogger : ILog
     {

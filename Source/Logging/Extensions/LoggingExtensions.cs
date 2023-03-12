@@ -1,9 +1,6 @@
-﻿using System;
-using Casshan.Logging;
-
-namespace Casshan.Extensions
+﻿namespace Casshan.Logging.Extensions
 {
-    internal static class LoggingExtensions
+    public static class LoggingExtensions
     {
         public static ILog WithTimeStampLogging(this ILog underlyingLog, DateTimeKind kind)
         {

@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Casshan.Logging
+﻿namespace Casshan.Logging
 {
-    internal sealed class LevelPrefixLogger : ILog
+    public sealed class LevelPrefixLogger : ILog
     {
         private readonly ILog m_UnderlyingLog;
 
@@ -21,15 +19,15 @@ namespace Casshan.Logging
         {
             switch (level)
             {
-                case LogLevel.debug:
+                case LogLevel.Debug:
                     return "[DEBUG]";
-                case LogLevel.info:
+                case LogLevel.Info:
                     return "[INFO]";
-                case LogLevel.warning:
+                case LogLevel.Warning:
                     return "[WARN]";
-                case LogLevel.success:
+                case LogLevel.Success:
                     return "[SUCCESS]";
-                case LogLevel.error:
+                case LogLevel.Error:
                     return "[ERROR]";
                 default:
                     return "[SHIET]";

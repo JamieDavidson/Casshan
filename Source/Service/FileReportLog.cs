@@ -29,7 +29,7 @@ namespace Casshan
             };
 
             m_SummonerName = account.SummonerName;
-            m_Log.Log($"Log for {m_SummonerName} started", LogLevel.success);
+            m_Log.Log($"Log for {m_SummonerName} started", LogLevel.Success);
         }
 
         public void AddReportItem(string sectionName, int sectionSuspicion, IEnumerable<string> reportLines)
@@ -40,7 +40,7 @@ namespace Casshan
                 SectionName = sectionName,
                 ReportLines = reportLines.ToArray()
             });
-            m_Log.Log($"Added {sectionName} section to report", LogLevel.success);
+            m_Log.Log($"Added {sectionName} section to report", LogLevel.Success);
         }
 
         public void FinishReport()
@@ -48,18 +48,18 @@ namespace Casshan
             m_CurrentLog.SuspicionRating = m_CurrentLog.ReportItems.Sum(i => i.SectionSuspicion);
 
             JsonUtil.SaveJsonToFile($@".\Reports\{m_SummonerName}.json", m_CurrentLog);
-            m_Log.Log($"Log for {m_SummonerName} finalised", LogLevel.success);
+            m_Log.Log($"Log for {m_SummonerName} finalised", LogLevel.Success);
             if (m_CurrentLog.SuspicionRating >= 10)
             {
-                m_Log.Log($"{m_SummonerName} likely a bot, suspicion rating {m_CurrentLog.SuspicionRating}", LogLevel.success);
+                m_Log.Log($"{m_SummonerName} likely a bot, suspicion rating {m_CurrentLog.SuspicionRating}", LogLevel.Success);
             }
             else if (m_CurrentLog.SuspicionRating >= 5)
             {
-                m_Log.Log($"{m_SummonerName} possibly a bot, suspicion rating {m_CurrentLog.SuspicionRating}", LogLevel.success);
+                m_Log.Log($"{m_SummonerName} possibly a bot, suspicion rating {m_CurrentLog.SuspicionRating}", LogLevel.Success);
             }
             else
             {
-                m_Log.Log($"{m_SummonerName} unlikely a bot, suspicion rating {m_CurrentLog.SuspicionRating}", LogLevel.success);
+                m_Log.Log($"{m_SummonerName} unlikely a bot, suspicion rating {m_CurrentLog.SuspicionRating}", LogLevel.Success);
             }
         }
     }

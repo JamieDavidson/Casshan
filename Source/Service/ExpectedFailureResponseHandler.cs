@@ -31,8 +31,8 @@ namespace Casshan
                 }
                 catch (Exception e)
                 {
-                    m_Log.Log("Exception sending request: " + e, LogLevel.error);
-                    m_Log.Log("Waiting 10 seconds to try again", LogLevel.error);
+                    m_Log.Log("Exception sending request: " + e, LogLevel.Error);
+                    m_Log.Log("Waiting 10 seconds to try again", LogLevel.Error);
                     Thread.Sleep(TimeSpan.FromSeconds(10));
                 }
             }
@@ -50,13 +50,13 @@ namespace Casshan
                 {
                     if (response.Headers?.RetryAfter?.Delta == null)
                     {
-                        m_Log.Log("Got rate limit response, but Riot didn't tell us how long to wait.", LogLevel.error);
-                        m_Log.Log("Waiting for 1 minute and trying again...", LogLevel.error);
+                        m_Log.Log("Got rate limit response, but Riot didn't tell us how long to wait.", LogLevel.Error);
+                        m_Log.Log("Waiting for 1 minute and trying again...", LogLevel.Error);
                         Thread.Sleep(TimeSpan.FromMinutes(1));
                     }
                     else
                     {
-                        m_Log.Log($"Hit rate limit, backing off for {response.Headers.RetryAfter.Delta.Value}", LogLevel.warning);
+                        m_Log.Log($"Hit rate limit, backing off for {response.Headers.RetryAfter.Delta.Value}", LogLevel.Warning);
                         Thread.Sleep(response.Headers.RetryAfter.Delta.Value);
                     }
 
@@ -68,17 +68,17 @@ namespace Casshan
                     case HttpStatusCode.ServiceUnavailable:
                         // Sometimes this happens regardless of the status of the service
                         // In the future it would make sense to implement exponential backoff
-                        m_Log.Log("Riot returned 503, waiting 5 seconds and trying again.", LogLevel.warning);
+                        m_Log.Log("Riot returned 503, waiting 5 seconds and trying again.", LogLevel.Warning);
                         Thread.Sleep(TimeSpan.FromSeconds(5));
                         break;
 
                     case HttpStatusCode.GatewayTimeout:
-                        m_Log.Log("Gateway timeout, waiting 5 seconds and trying again", LogLevel.warning);
+                        m_Log.Log("Gateway timeout, waiting 5 seconds and trying again", LogLevel.Warning);
                         Thread.Sleep(TimeSpan.FromSeconds(5));
                         break;
 
                     case HttpStatusCode.InternalServerError:
-                        m_Log.Log("Riot returned server error, waiting 5 seconds and trying again", LogLevel.warning);
+                        m_Log.Log("Riot returned server error, waiting 5 seconds and trying again", LogLevel.Warning);
                         Thread.Sleep(TimeSpan.FromSeconds(5));
                         break;
                 }

@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Casshan.Logging
+﻿namespace Casshan.Logging
 {
-    internal sealed class ConsoleLogger : ILog
+    public sealed class ConsoleLogger : ILog
     {
         public void Log(string message, LogLevel level)
         {

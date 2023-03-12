@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Casshan.Logging
+﻿namespace Casshan.Logging
 {
-    internal sealed class ConsoleColourLogger : ILog
+    public sealed class ConsoleColourLogger : ILog
     {
         private readonly ILog m_UnderlyingLog;
 
@@ -23,14 +21,14 @@ namespace Casshan.Logging
         {
             switch (level)
             {
-                case LogLevel.debug:
-                case LogLevel.info:
+                case LogLevel.Debug:
+                case LogLevel.Info:
                     return ConsoleColor.White;
-                case LogLevel.warning:
+                case LogLevel.Warning:
                     return ConsoleColor.Yellow;
-                case LogLevel.error:
+                case LogLevel.Error:
                     return ConsoleColor.Red;
-                case LogLevel.success:
+                case LogLevel.Success:
                     return ConsoleColor.Green;
                 default:
                     return ConsoleColor.Cyan;

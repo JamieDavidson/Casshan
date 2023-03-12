@@ -21,7 +21,7 @@ namespace Casshan.Repositories
 
         public Account GetAccountBySummonerName(string summonerName)
         {
-            m_Log.Log($"Retrieving details for {summonerName}", LogLevel.info);
+            m_Log.Log($"Retrieving details for {summonerName}", LogLevel.Info);
             using (var client = m_CreateClient())
             {
                 var response = client.GetAsync($"summoner/v4/summoners/by-name/{summonerName}").Result;

@@ -8,8 +8,8 @@ using Casshan.Analyzers;
 using Casshan.Bindings.Static;
 using Casshan.Domain;
 using Casshan.Exceptions;
-using Casshan.Extensions;
 using Casshan.Logging;
+using Casshan.Logging.Extensions;
 using Casshan.Repositories;
 
 namespace Casshan
@@ -54,7 +54,7 @@ namespace Casshan
 
                 if (toSearch.Length == 0)
                 {
-                    m_Log.Log("We have no accounts to search, something's clearly wrong, exiting :D", LogLevel.error);
+                    m_Log.Log("We have no accounts to search, something's clearly wrong, exiting :D", LogLevel.Error);
                     Environment.Exit(0);
                 }
 
@@ -67,20 +67,20 @@ namespace Casshan
                     {
                         if (File.Exists($@".\Reports\{n.SummonerName}.json"))
                         {
-                            m_Log.Log($"Already analysed {n.SummonerName}, skipping", LogLevel.info);
+                            m_Log.Log($"Already analysed {n.SummonerName}, skipping", LogLevel.Info);
                             continue;
                         }
                         var next = m_SummonerRepository.GetAccountById(n.AccountId);
                         if (File.Exists($@".\Reports\{next.SummonerName}.json"))
                         {
-                            m_Log.Log($"Already analysed {next.SummonerName}, skipping", LogLevel.info);
+                            m_Log.Log($"Already analysed {next.SummonerName}, skipping", LogLevel.Info);
                             continue;
                         }
                         RunAnalysis(next);
                     }
                     catch (SummonerRepositoryFailureException)
                     {
-                        m_Log.Log($"{n.SummonerName} has played no bot games", LogLevel.info);
+                        m_Log.Log($"{n.SummonerName} has played no bot games", LogLevel.Info);
                     }
                     finally
                     {
@@ -118,7 +118,7 @@ namespace Casshan
         {
             var names = JsonUtil.LoadJsonFromFile<string[]>($@"{Environment.CurrentDirectory}\data\names.json");
 
-            m_Log.Log($"Loaded {names.Length} predefined names", LogLevel.debug);
+            m_Log.Log($"Loaded {names.Length} predefined names", LogLevel.Debug);
 
             var variations = new List<string>();
 
@@ -128,7 +128,7 @@ namespace Casshan
                 variations.Add(name + name[name.Length-1]);
             }
 
-            m_Log.Log($"Created {variations.Count} name variations", LogLevel.debug);
+            m_Log.Log($"Created {variations.Count} name variations", LogLevel.Debug);
 
             return new PredefinedNameStrippingAnalyzer
                 (m_ReportLog, names.Concat(variations), new CasingPatternNameAnalyzer(m_ReportLog));
@@ -159,15 +159,15 @@ namespace Casshan
                 $"Bot games played: {botGames}"
             });
 
-            m_Log.Log($"{account.SummonerName}, {account.AccountId}", LogLevel.info);
-            m_Log.Log($"Bot Games / All games: {botGames}/{allGames}", LogLevel.info);
+            m_Log.Log($"{account.SummonerName}, {account.AccountId}", LogLevel.Info);
+            m_Log.Log($"Bot Games / All games: {botGames}/{allGames}", LogLevel.Info);
 
             // Unlikely we'll hit this for now, since we're analysing bot games and then
             // moving on to other players in the bot game. But for future purposes,
             // such as searching a user's current non-AI game, it'll be useful.
             if (botGames == 0)
             {
-                m_Log.Log($"Target {account.SummonerName} has played no bot games, skipping.", LogLevel.error);
+                m_Log.Log($"Target {account.SummonerName} has played no bot games, skipping.", LogLevel.Error);
                 return;
             }
 
@@ -176,7 +176,7 @@ namespace Casshan
             var gameIds = m_MatchRepository.GetMatchIds(account.AccountId).ToArray();
             var matches = new List<Match>();
 
-            m_Log.Log($"Retrieving bot games for {account.SummonerName}", LogLevel.info);
+            m_Log.Log($"Retrieving bot games for {account.SummonerName}", LogLevel.Info);
             var previousNames = new List<string>();
             var participants = new List<Account>();
             for (var i = 0; i < gameIds.Length; i++)
@@ -199,7 +199,7 @@ namespace Casshan
                     if (!previousNames.Contains(oldName))
                     {
                         previousNames.Add(oldName);
-                        m_Log.Log($"{account.SummonerName} has had a name change, old name: {oldName}", LogLevel.success);
+                        m_Log.Log($"{account.SummonerName} has had a name change, old name: {oldName}", LogLevel.Success);
                         m_NameAnalyzer.AnalyzeName(oldName);
                     }
                 }
