@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 
-namespace Casshan
+namespace Casshan.Service
 {
     internal static class JsonUtil
     {

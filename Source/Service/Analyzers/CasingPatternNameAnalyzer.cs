@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Casshan.Analyzers
+namespace Casshan.Service.Analyzers
 {
     internal sealed class CasingPatternNameAnalyzer : INameAnalyzer
     {

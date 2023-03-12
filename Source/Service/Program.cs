@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-
-using Casshan.Analyzers;
-using Casshan.Bindings.Static;
-using Casshan.Domain;
-using Casshan.Exceptions;
 using Casshan.Logging;
 using Casshan.Logging.Extensions;
-using Casshan.Repositories;
+using Casshan.Service.Analyzers;
+using Casshan.Service.Bindings.Static;
+using Casshan.Service.Domain;
+using Casshan.Service.Exceptions;
+using Casshan.Service.Repositories;
 
-namespace Casshan
+namespace Casshan.Service
 {
     internal class Program
     {

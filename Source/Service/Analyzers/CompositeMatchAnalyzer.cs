@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Casshan.Service.Domain;
 
-using Casshan.Domain;
-
-namespace Casshan.Analyzers
+namespace Casshan.Service.Analyzers
 {
     internal sealed class CompositeMatchAnalyzer : IMatchAnalyzer
     {

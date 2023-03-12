@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Casshan.Logging;
 
-namespace Casshan
+namespace Casshan.Service
 {
     internal sealed class ExpectedFailureResponseHandler : DelegatingHandler
     {

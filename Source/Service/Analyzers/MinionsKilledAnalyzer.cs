@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Casshan.Domain;
+using Casshan.Service.Domain;
 
-namespace Casshan.Analyzers
+namespace Casshan.Service.Analyzers
 {
     internal sealed class MinionsKilledAnalyzer : IMatchAnalyzer
     {

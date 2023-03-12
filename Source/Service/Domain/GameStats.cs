@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Casshan.Domain
+namespace Casshan.Service.Domain
 {
     internal sealed class GameStats
     {

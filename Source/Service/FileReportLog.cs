@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Casshan.Bindings.Report;
-using Casshan.Domain;
 using Casshan.Logging;
+using Casshan.Service.Bindings.Report;
+using Casshan.Service.Domain;
 
-namespace Casshan
+namespace Casshan.Service
 {
     internal sealed class FileReportLog : IReportLog
     {

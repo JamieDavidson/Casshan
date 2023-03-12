@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Casshan.Exceptions
+namespace Casshan.Service.Exceptions
 {
     internal sealed class NonSuccessResponseException : Exception
     {

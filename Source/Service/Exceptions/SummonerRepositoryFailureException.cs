@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Casshan.Exceptions
+namespace Casshan.Service.Exceptions
 {
     internal sealed class SummonerRepositoryFailureException : Exception
     {

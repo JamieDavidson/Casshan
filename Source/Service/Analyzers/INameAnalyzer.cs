@@ -1,4 +1,4 @@
-﻿namespace Casshan.Analyzers
+﻿namespace Casshan.Service.Analyzers
 {
     internal interface INameAnalyzer
     {

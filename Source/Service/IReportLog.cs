@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Casshan.Domain;
+using Casshan.Service.Domain;
 
-namespace Casshan
+namespace Casshan.Service
 {
     internal interface IReportLog
     {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Casshan.Bindings.Static
+namespace Casshan.Service.Bindings.Static
 {
     internal sealed class RuneSlotJsonBinding
     {

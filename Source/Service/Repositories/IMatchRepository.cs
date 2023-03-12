@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Casshan.Domain;
+using Casshan.Service.Domain;
 
-namespace Casshan.Repositories
+namespace Casshan.Service.Repositories
 {
     internal interface IMatchRepository
     {

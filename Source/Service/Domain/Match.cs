@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Casshan.Domain
+namespace Casshan.Service.Domain
 {
     internal sealed class Match
     {

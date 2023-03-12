@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-
+using Casshan.Logging;
+using Casshan.Service.Bindings.Dynamic;
+using Casshan.Service.Domain;
+using Casshan.Service.Exceptions;
 using Newtonsoft.Json;
 
-using Casshan.Bindings.Dynamic;
-using Casshan.Domain;
-using Casshan.Exceptions;
-using Casshan.Logging;
-
-namespace Casshan.Repositories
+namespace Casshan.Service.Repositories
 {
     internal sealed class MatchRepository : IMatchRepository
     {

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Net.Http;
-
-using Casshan.Bindings.Dynamic;
-using Casshan.Domain;
-using Casshan.Exceptions;
 using Casshan.Logging;
+using Casshan.Service.Bindings.Dynamic;
+using Casshan.Service.Domain;
+using Casshan.Service.Exceptions;
 using Newtonsoft.Json;
 
-namespace Casshan.Repositories
+namespace Casshan.Service.Repositories
 {
     internal sealed class SummonerRepository : ISummonerRepository
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Casshan.Analyzers
+namespace Casshan.Service.Analyzers
 {
     internal sealed class PredefinedNameStrippingAnalyzer : INameAnalyzer
     {

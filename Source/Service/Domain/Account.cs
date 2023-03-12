@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Casshan.Domain
+namespace Casshan.Service.Domain
 {
     internal sealed class Account
     {

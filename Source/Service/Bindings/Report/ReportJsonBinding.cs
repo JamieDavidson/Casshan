@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Casshan.Bindings.Report
+namespace Casshan.Service.Bindings.Report
 {
     internal sealed class ReportJsonBinding
     {

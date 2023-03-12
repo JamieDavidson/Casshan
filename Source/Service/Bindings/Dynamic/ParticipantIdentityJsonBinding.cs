@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Casshan.Bindings.Dynamic
+namespace Casshan.Service.Bindings.Dynamic
 {
     internal sealed class ParticipantIdentityJsonBinding
     {

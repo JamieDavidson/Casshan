@@ -1,4 +1,4 @@
-﻿namespace Casshan.Domain
+﻿namespace Casshan.Service.Domain
 {
     internal readonly struct SummonerSpellPair
     {
