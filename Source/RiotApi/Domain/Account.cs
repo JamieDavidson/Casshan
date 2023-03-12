@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Casshan.Service.Domain
+﻿namespace Casshan.RiotApi.Domain
 {
-    internal sealed class Account
+    public sealed class Account
     {
         public string SummonerName { get; }
 

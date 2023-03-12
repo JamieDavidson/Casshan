@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Casshan.Logging;
+using Casshan.RiotApi.Domain;
 using Casshan.Service.Bindings.Report;
-using Casshan.Service.Domain;
 
 namespace Casshan.Service
 {

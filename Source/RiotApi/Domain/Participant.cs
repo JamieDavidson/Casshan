@@ -1,4 +1,4 @@
-﻿namespace Casshan.Service.Domain
+﻿namespace Casshan.RiotApi.Domain
 {
     internal sealed class Participant
     {

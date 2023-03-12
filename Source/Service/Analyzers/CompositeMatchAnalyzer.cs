@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Casshan.Service.Domain;
+using Casshan.RiotApi.Domain;
 
 namespace Casshan.Service.Analyzers
 {
@@ -13,7 +13,7 @@ namespace Casshan.Service.Analyzers
             m_MatchAnalyzers = matchAnalyzers.ToArray();
         }
 
-        public void AnalyzeMatches(IEnumerable<Match> matches)
+        public void AnalyzeMatches(IEnumerable<LeagueMatch> matches)
         {
             var matchesArray = matches.ToArray();
 

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Casshan.Service.Bindings.Dynamic
+namespace Casshan.RiotApi.Bindings
 {
     internal sealed class ParticipantJsonBinding
     {

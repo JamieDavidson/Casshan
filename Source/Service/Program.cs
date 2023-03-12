@@ -5,11 +5,11 @@ using System.Linq;
 using System.Net.Http;
 using Casshan.Logging;
 using Casshan.Logging.Extensions;
+using Casshan.RiotApi.Domain;
+using Casshan.RiotApi.Exceptions;
+using Casshan.RiotApi.Repositories;
 using Casshan.Service.Analyzers;
 using Casshan.Service.Bindings.Static;
-using Casshan.Service.Domain;
-using Casshan.Service.Exceptions;
-using Casshan.Service.Repositories;
 
 namespace Casshan.Service
 {
@@ -173,7 +173,7 @@ namespace Casshan.Service
             m_NameAnalyzer.AnalyzeName(account.SummonerName);
 
             var gameIds = m_MatchRepository.GetMatchIds(account.AccountId).ToArray();
-            var matches = new List<Match>();
+            var matches = new List<LeagueMatch>();
 
             m_Log.Log($"Retrieving bot games for {account.SummonerName}", LogLevel.Info);
             var previousNames = new List<string>();

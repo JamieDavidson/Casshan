@@ -1,8 +1,8 @@
-﻿using Casshan.Service.Domain;
+﻿using Casshan.RiotApi.Domain;
 
-namespace Casshan.Service.Repositories
+namespace Casshan.RiotApi.Repositories
 {
-    internal interface ISummonerRepository
+    public interface ISummonerRepository
     {
         Account GetAccountBySummonerName(string summonerName);
 

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Casshan.Service.Domain;
+using Casshan.RiotApi.Domain;
 
 namespace Casshan.Service.Analyzers
 {
     internal interface IMatchAnalyzer
     {
-        void AnalyzeMatches(IEnumerable<Match> matches);
+        void AnalyzeMatches(IEnumerable<LeagueMatch> matches);
     }
 }

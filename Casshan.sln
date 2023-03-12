@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casshan.Service", "Source\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casshan.Logging", "Source\Logging\Casshan.Logging.csproj", "{867C4819-9E9E-4E23-A24B-C519EE952DEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casshan.RiotApi", "Source\RiotApi\Casshan.RiotApi.csproj", "{A94EED30-CA0E-4FEF-BEA6-1A1FC38BDE19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{867C4819-9E9E-4E23-A24B-C519EE952DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{867C4819-9E9E-4E23-A24B-C519EE952DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{867C4819-9E9E-4E23-A24B-C519EE952DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A94EED30-CA0E-4FEF-BEA6-1A1FC38BDE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A94EED30-CA0E-4FEF-BEA6-1A1FC38BDE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A94EED30-CA0E-4FEF-BEA6-1A1FC38BDE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A94EED30-CA0E-4FEF-BEA6-1A1FC38BDE19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 
-namespace Casshan.Service.Exceptions
+namespace Casshan.RiotApi.Exceptions
 {
     internal sealed class NonSuccessResponseException : Exception
     {

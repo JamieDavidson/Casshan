@@ -1,6 +1,6 @@
-﻿namespace Casshan.Service.Domain
+﻿namespace Casshan.RiotApi.Domain
 {
-    internal readonly struct SummonerSpellPair
+    public readonly struct SummonerSpellPair
     {
         public int First { get; }
         public int Second { get; }

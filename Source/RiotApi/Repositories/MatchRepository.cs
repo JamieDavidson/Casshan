@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Net;
 using Casshan.Logging;
-using Casshan.Service.Bindings.Dynamic;
-using Casshan.Service.Domain;
-using Casshan.Service.Exceptions;
+using Casshan.RiotApi.Bindings;
+using Casshan.RiotApi.Domain;
+using Casshan.RiotApi.Exceptions;
 using Newtonsoft.Json;
 
-namespace Casshan.Service.Repositories
+namespace Casshan.RiotApi.Repositories
 {
-    internal sealed class MatchRepository : IMatchRepository
+    public sealed class MatchRepository : IMatchRepository
     {
         private static readonly int[] BotGameIds = { 31, 32, 33, 800, 810, 820, 830, 840, 850 };
 
@@ -26,7 +22,7 @@ namespace Casshan.Service.Repositories
             m_Log = log ?? throw new ArgumentNullException(nameof(log));
         }
 
-        public Match GetMatchForPlayer(string accountId, string gameId)
+        public LeagueMatch GetMatchForPlayer(string accountId, string gameId)
         {
             var binding = GetJson<SingleMatchJsonBinding>($"match/v4/matches/{gameId}");
 
@@ -106,7 +102,7 @@ namespace Casshan.Service.Repositories
             }
         }
 
-        private static Match ToDomain(string targetAccountId, SingleMatchJsonBinding binding)
+        private static LeagueMatch ToDomain(string targetAccountId, SingleMatchJsonBinding binding)
         {
             var humanPlayers = binding.ParticipantIdentities
                 .Where(p => p.Player.SummonerId != null);
@@ -139,7 +135,7 @@ namespace Casshan.Service.Repositories
                                               stats.WardsKilled,
                                               stats.WardsPlaced);
 
-            return new Match(humanPlayers.Select(s => new Account(s.Player.SummonerName, s.Player.AccountId)),
+            return new LeagueMatch(humanPlayers.Select(s => new Account(s.Player.SummonerName, s.Player.AccountId)),
                              runes,
                              spells,
                              visionScore,

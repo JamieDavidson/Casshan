@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Casshan.Service.Domain;
+using Casshan.RiotApi.Domain;
 
 namespace Casshan.Service.Analyzers
 {
@@ -13,7 +13,7 @@ namespace Casshan.Service.Analyzers
             m_ReportLog = reportLog;
         }
 
-        public void AnalyzeMatches(IEnumerable<Match> matches)
+        public void AnalyzeMatches(IEnumerable<LeagueMatch> matches)
         {
             var matchesArray = matches.ToArray();
             var noKills = matchesArray.Count(m => m.MinionsKilled == 0);

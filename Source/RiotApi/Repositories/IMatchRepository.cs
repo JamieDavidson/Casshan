@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using Casshan.Service.Domain;
+﻿using Casshan.RiotApi.Domain;
 
-namespace Casshan.Service.Repositories
+namespace Casshan.RiotApi.Repositories
 {
-    internal interface IMatchRepository
+    public interface IMatchRepository
     {
-        Match GetMatchForPlayer(string accountId, string gameId);
+        LeagueMatch GetMatchForPlayer(string accountId, string gameId);
 
         int GetAramGameCount(string accountId);
 

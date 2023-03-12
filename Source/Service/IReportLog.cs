@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Casshan.Service.Domain;
+using Casshan.RiotApi.Domain;
 
 namespace Casshan.Service
 {

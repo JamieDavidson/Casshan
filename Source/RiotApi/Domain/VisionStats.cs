@@ -1,6 +1,6 @@
-﻿namespace Casshan.Service.Domain
+﻿namespace Casshan.RiotApi.Domain
 {
-    internal sealed class VisionStats
+    public sealed class VisionStats
     {
         public int VisionScore { get; }
         public int WardsBought { get; }

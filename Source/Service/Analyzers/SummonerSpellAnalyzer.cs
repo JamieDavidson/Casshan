@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Casshan.Service.Domain;
+using Casshan.RiotApi.Domain;
 
 namespace Casshan.Service.Analyzers
 {
@@ -18,7 +18,7 @@ namespace Casshan.Service.Analyzers
                 ?? throw new ArgumentNullException(nameof(summonerData));
         }
 
-        public void AnalyzeMatches(IEnumerable<Match> matches)
+        public void AnalyzeMatches(IEnumerable<LeagueMatch> matches)
         {
             var matchesArray = matches.ToArray();
 

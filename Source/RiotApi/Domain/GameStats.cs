@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Casshan.Service.Domain
+﻿namespace Casshan.RiotApi.Domain
 {
     internal sealed class GameStats
     {

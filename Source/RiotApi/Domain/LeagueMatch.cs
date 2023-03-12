@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Casshan.Service.Domain
+﻿namespace Casshan.RiotApi.Domain
 {
-    internal sealed class Match
+    public sealed class LeagueMatch
     {
         public IReadOnlyCollection<Account> HumanParticipants { get; }
         public IReadOnlyCollection<int> RuneIds { get; }
@@ -13,7 +9,7 @@ namespace Casshan.Service.Domain
         public int MinionsKilled { get; }
 
 
-        public Match(IEnumerable<Account> humanParticipants,
+        public LeagueMatch(IEnumerable<Account> humanParticipants,
                      IEnumerable<int> targetRuneIds,
                      SummonerSpellPair targetSpellIds,
                      VisionStats visionStats,

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Net.Http;
-using Casshan.Logging;
-using Casshan.Service.Bindings.Dynamic;
-using Casshan.Service.Domain;
-using Casshan.Service.Exceptions;
+﻿using Casshan.Logging;
+using Casshan.RiotApi.Bindings;
+using Casshan.RiotApi.Domain;
+using Casshan.RiotApi.Exceptions;
 using Newtonsoft.Json;
 
-namespace Casshan.Service.Repositories
+namespace Casshan.RiotApi.Repositories
 {
-    internal sealed class SummonerRepository : ISummonerRepository
+    public sealed class SummonerRepository : ISummonerRepository
     {
         public SummonerRepository(Func<HttpClient> createClient, ILog log)
         {
