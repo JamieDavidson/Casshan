@@ -10,7 +10,6 @@ using Casshan.Domain;
 using Casshan.Exceptions;
 using Casshan.Extensions;
 using Casshan.Logging;
-using Casshan.Properties;
 using Casshan.Repositories;
 
 namespace Casshan
@@ -230,7 +229,7 @@ namespace Casshan
                 BaseAddress = new Uri("https://na1.api.riotgames.com/lol/")
             };
             
-            client.DefaultRequestHeaders.Add("X-Riot-Token", Settings.Default.APIKey);
+            client.DefaultRequestHeaders.Add("X-Riot-Token", "SET ME");
 
             return client;
         }
